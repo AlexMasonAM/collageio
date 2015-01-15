@@ -1,0 +1,12 @@
+<h1>Posts</h1>
+
+<% @posts.each do |post| %>
+  <div class="post-container">
+  <%= image_tag post.image_url, size:'500x500' %>
+  <p>
+  <b><%= post.title %></b>
+  </p>
+  </div>
+
+<% end %>
+
