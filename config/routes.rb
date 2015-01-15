@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: 'pages#homepage' 
   
+  get 'posts/new' => 'posts#new'
+  
   get '/signup' => 'users#new', as: :signup
   
   get '/login' => 'sessions#new', as: :login

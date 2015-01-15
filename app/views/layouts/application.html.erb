@@ -7,19 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+  <!-- Session User ID: <%= session[:user_id] %> -->
+  <div class="pull-right">
+    <% if current_user %>
+        Logged in as: <%= current_user.username %> | <%= link_to 'Logout', logout_path %> |
+        <%= link_to "Todays posts", posts_path %>
+      <% else %> 
+        <%= link_to 'Login', login_path %> or <%= link_to 'Join', signup_path %> 
+      <% end %>
+    </div>
 
-Session User ID: <%= session[:user_id] %>
+  <h2><%= link_to "Collageio", root_path %></h2>
 
-<% if current_user %>
-  Logged in as: <%= current_user.username %> | <%= link_to 'Logout', logout_path %>
-  <%= link_to "Todays posts", posts_path %>
-<% else %> 
-  <%= link_to 'Login', login_path %> or <%= link_to 'Join', signup_path %> 
-<% end %> 
-
-<h2><%= link_to "Collageio", root_path %></h2>
-
-<%= yield %>
-
+  <%= yield %>
+  </div>
 </body>
 </html>

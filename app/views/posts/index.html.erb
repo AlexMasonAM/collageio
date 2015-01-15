@@ -1,8 +1,10 @@
 <h1>Posts</h1>
 
+<%= link_to "New Post", 'posts/new' %>
+
 <% @posts.each do |post| %>
   <div class="post-container">
-  <%= image_tag post.image_url, size:'500x500' %>
+  <%= image_tag post.image_url, size:'800x800' %>
   <p>
   <b><%= post.title %></b>
   </p>
