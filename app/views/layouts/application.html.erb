@@ -10,6 +10,12 @@
 
 Session User ID: <%= session[:user_id] %>
 
+<% if current_user %>
+  Logged in as: <%= current_user.username %> | <%= link_to 'Logout', logout_path %>
+<% else %> 
+  <%= link_to 'Login', login_path %> or <%= link_to 'Join', signup_path %> 
+<% end %> 
+
 <%= yield %>
 
 </body>
